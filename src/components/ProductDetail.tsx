@@ -17,7 +17,7 @@ const ProductDetail = () => {
   const params = useParams()
 
   useEffect(()=>{
-    const currentProduct = data.filter((_product)=> _product.id === parseInt(params.id!))
+    const currentProduct = data.filter((_product: ProductT) => _product.id === parseInt(params.id!))
     
     if(currentProduct){
       setProduct(currentProduct[0])
