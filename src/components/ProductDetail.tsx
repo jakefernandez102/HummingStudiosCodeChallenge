@@ -16,7 +16,7 @@ const ProductDetail = ({imageToShow, product, setImageToShow, imageGalery}:Produ
   const {addToCart} = useCart()
   return (
     <>
-      <div className="col-4">
+      <div className=" col-4">
           <div
             className="magnifier-image"
           >
@@ -40,7 +40,7 @@ const ProductDetail = ({imageToShow, product, setImageToShow, imageGalery}:Produ
             setImageToShow={setImageToShow}
           />
       </div>
-      <div className='col-4'>
+      <div className='col-4 col-lg-4'>
             {
               imageGalery.map((image:string) => (
                 <img
@@ -53,7 +53,7 @@ const ProductDetail = ({imageToShow, product, setImageToShow, imageGalery}:Produ
               ))
             }
       </div>
-      <div className="col-4">
+      <div className=" col-lg-4">
           <h3 className="text-black fs-4 fw-bold text-uppercase text-center">{product?.name}</h3>
           <p className="fs-5 ">{product?.description}</p>
           <p className="fw-black text-primary fs-3 text-center">{product?.price.toLocaleString('en-US',{style:'currency',currency:'USD'})}</p>

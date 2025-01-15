@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {toast, ToastContainer} from 'react-toastify'
+import {toast} from 'react-toastify'
 const SubscriptionForm = () => {
 
   const [email, setEmail] = useState('')
@@ -36,7 +36,6 @@ const SubscriptionForm = () => {
           </div>
           <input className='subscription-form-submit' type="submit" value='Subscribe' />
         </form>
-        <ToastContainer />
       </section>
   )
 }

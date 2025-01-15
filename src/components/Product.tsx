@@ -2,7 +2,6 @@ import {useState} from "react";
 import {Link} from "react-router-dom";
 import { ProductT} from "../types/product";
 import {useCart} from "../hooks/useCart";
-import {ToastContainer} from "react-toastify";
 import Button from "./product/Button";
 import VariantColors from "./product/VariantColors";
 import StockIndicator from "./product/StockIndicator";
@@ -68,7 +67,6 @@ export default function Product({product}: ProductProps) {
                 text={'Add to Cart'}
               />
             </div>
-            <ToastContainer/>
         </div>
     )
 }

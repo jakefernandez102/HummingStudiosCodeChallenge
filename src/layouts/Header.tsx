@@ -21,7 +21,7 @@ export default function Header() {
                     
                     <Title textWhite={'Humming'} textYellow={'Store Challenge'} />
 
-                    <nav className="col-md-6 a mt-5 d-flex align-items-start justify-content-end">
+                    <nav className="col-md-6 a mt-5 d-flex align-items-start justify-content-center">
                             <Cart
                               isEmpty={isEmpty}
                               cart={cart}

@@ -798,6 +798,10 @@ button:not(:disabled),
     justify-content: space-between !important;
   }
 
+  .justify-content-md-center {
+    justify-content: center !important;
+  }
+
   .m-md-0 {
     margin: 0 !important;
   }

@@ -38,7 +38,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const addToCart = (item: CartT) => {
     const itemExists = cart.findIndex((product: ProductT) => product.id === item.id);
     if(item.stock ===0){
-      toast('We sorry, the product you tried to add to the cart is currently out of stock',{
+      toast("We're sorry, the product you tried to add to the cart is currently out of stock",{
         position:'top-center',
         type:'error'
       })

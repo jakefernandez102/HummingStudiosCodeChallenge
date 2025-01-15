@@ -7,8 +7,8 @@ type TitleProps ={
 
 const Title = ({textWhite,textYellow}: TitleProps) => {
   return (
-    <div className="col-8 col-md-3">
-        <Link to="/" className='fs-3 fw-black'>
+    <div className="col-12 col-md-3 text-center">
+        <Link to="/" className='fs-3 fw-black '>
             {textWhite} <span className='text-primary fs-3'>{textYellow}</span>
         </Link>
     </div>

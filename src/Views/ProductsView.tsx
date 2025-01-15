@@ -3,6 +3,7 @@ import Product from '../components/Product'
 import Footer from '../components/Footer'
 import {useCart} from '../hooks/useCart'
 import SubscriptionForm from '../components/SubscriptionForm'
+import {ToastContainer} from 'react-toastify'
 
 
 function ProductView() {
@@ -29,6 +30,7 @@ function ProductView() {
     <SubscriptionForm/>
 
     <Footer/>
+    <ToastContainer/>
     </>
   )
 }
