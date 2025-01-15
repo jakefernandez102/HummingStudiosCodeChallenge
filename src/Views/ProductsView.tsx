@@ -24,6 +24,8 @@ function ProductView() {
         </div>
     </main>
     
+    <hr className='my-5' />
+
     <SubscriptionForm/>
 
     <Footer/>

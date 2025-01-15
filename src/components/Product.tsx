@@ -1,8 +1,12 @@
 import {useState} from "react";
 import {Link} from "react-router-dom";
 import { ProductT} from "../types/product";
-import {handleChangeImage} from "../utils/change-image";
 import {useCart} from "../hooks/useCart";
+import {ToastContainer} from "react-toastify";
+import Button from "./product/Button";
+import VariantColors from "./product/VariantColors";
+import StockIndicator from "./product/StockIndicator";
+import ProductImage from "./product/ProductImage";
 
 export type ProductProps ={
   product:ProductT
@@ -38,52 +42,33 @@ export default function Product({product}: ProductProps) {
 
   return (
         <div className="col-md-6 col-lg-4 my-4 row align-items-center">
-            <div className="col-12 relative">
-                <img className="img-fluid" src={imageToShow} alt="imagen product" />
-                <div className='carousel-container col-12'>
-                  <img onClick={handlePreviousVariant} className='less-than-icon' src="/img/less-than.png" alt="less than icon" />
-                  <img onClick={handleNextVariant} className='greater-than-icon' src="/img/greater-than.png" alt="greater than icon" />
-                </div>
-            </div>
-              <div>
-                {
-                  variant_colors.map(img =>(
-                    <img 
-                      key={img} 
-                      className="variant_color" 
-                      src={`/img/${img}.png`} 
-                      alt='images' 
-                      onMouseOver={(e)=>handleChangeImage(e,setImageToShow)}
-                    />
-                  ))
-                }
-              </div>
-              <div>
-                {product?.stock > 0 
-                ? (
-                <div className='d-flex gap-4 fs-5'>
-                  <p className='text-success fw-black blink'>o In stock</p>
-                </div>
-                )
-                : (
-                <div className='d-flex gap-4 fs-5'>
-                  <p className='text-danger fw-black blink'>- Out of stock</p>
-                </div>
-                )
-              }
-              </div>
-              <Link to={`/products/${id}`}>
-                <p className='text-primary fw-bold text-sub'>See details...</p>
-              </Link>
+            <ProductImage
+              imageToShow={imageToShow}
+              handleNextVariant={handleNextVariant}
+              handlePreviousVariant={handlePreviousVariant}
+            />
+
+            <VariantColors
+              variantColors={variant_colors}
+              setImageToShow={setImageToShow}
+            />
+
+            <StockIndicator
+              stock={product?.stock}
+            />
+            <Link to={`/products/${id}`}>
+              <p className='text-primary fw-bold text-sub'>See details...</p>
+            </Link>
             <div className="col-12">
-                <h3 className="text-black fs-4 fw-bold text-uppercase text-center">{name}</h3>
-                <p className="fw-black text-primary fs-3 text-center">{price.toLocaleString('en-US',{style:'currency',currency:'USD'})}</p>
-                <button 
-                    type="button"
-                    className="btn btn-dark w-100"
-                    onClick={() => addToCart({...product, quantity:1})}
-                >Add to Cart</button>
+              <h3 className="text-black fs-4 fw-bold text-uppercase text-center">{name}</h3>
+              <p className="fw-black text-primary fs-3 text-center">{price.toLocaleString('en-US',{style:'currency',currency:'USD'})}</p>
+              <Button
+                product={product}
+                addToCart={addToCart}
+                text={'Add to Cart'}
+              />
             </div>
+            <ToastContainer/>
         </div>
     )
 }

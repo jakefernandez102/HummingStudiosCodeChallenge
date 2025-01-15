@@ -43,7 +43,7 @@ export const db:ProductT[] = [
         stock:5,
     },
     {
-        id: 1,
+        id: 2,
         name: 'Nike Dunk Low Retro SE',
         image: 'NIKEDUNK_Black',
         variant_colors:[

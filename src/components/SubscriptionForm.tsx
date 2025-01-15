@@ -22,7 +22,6 @@ const SubscriptionForm = () => {
 
   return (
       <section className='col-8 text-center subscription-section'>
-        <hr />
         <h3 className='fs-3 text-primary'>If you want to receive update of our new products, subscribe by email below!</h3>
         <form onSubmit={handleSubmitForm} className='subscription-form'>
           <div className='subscription-form-group'>
