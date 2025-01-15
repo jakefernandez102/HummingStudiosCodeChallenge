@@ -15,6 +15,8 @@ type VariantColorsProps ={
             src={`/img/${img}.png`} 
             alt='images' 
             onMouseOver={(e)=>handleChangeImage(e,setImageToShow)}
+            width={100}
+            height={110}
           />
         ))
       }

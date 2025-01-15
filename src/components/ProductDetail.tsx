@@ -45,10 +45,12 @@ const ProductDetail = ({imageToShow, product, setImageToShow, imageGalery}:Produ
               imageGalery.map((image:string) => (
                 <img
                   key={image} 
-                  className="variant_color row" 
+                  className="variant_color row " 
                   src={`/img/${image}.png`} 
                   alt="product galery image"
                   onMouseOver={() => setImageToShow(`/img/${image}.png`)}
+                  width={105}
+                  height={105}
                 />
               ))
             }

@@ -341,10 +341,13 @@ button:not(:disabled),
 }
 
 .variant_color {
-  max-width: 20%;
-  height: auto;
+  /* max-width: 20%; */
   margin-right: .5rem;
   margin-top: .5rem;
+}
+
+.variant_img {
+  width: 15rem;
 }
 
 

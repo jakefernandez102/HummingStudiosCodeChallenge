@@ -37,7 +37,7 @@ const ProductDetailsView = () => {
   }, [imageToShow, product]);
   return (
     <>
-    <div className="col-12 my-4 mx-4 row align-items-center">
+    <div className="col-12 my-4 mx-4 row ">
       <ProductDetail
         imageToShow={imageToShow}
         product={product!}
