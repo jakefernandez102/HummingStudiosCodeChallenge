@@ -16,7 +16,7 @@ const ProductDetail = ({imageToShow, product, setImageToShow, imageGalery}:Produ
   const {addToCart} = useCart()
   return (
     <>
-      <div className=" col-4">
+      <div className="col-8 col-lg-4">
           <div
             className="magnifier-image"
           >
