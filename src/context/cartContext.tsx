@@ -2,20 +2,10 @@ import { createContext, ReactNode } from "react";
 import { useEffect, useMemo, useState } from "react";
 import { ProductT } from "../types/product";
 import { db } from "../data/db";
-import {CartT} from "../types/cart";
+import {CartContextType, CartT} from "../types/cart";
 import {toast} from "react-toastify";
 
-type CartContextType = {
-  cart: CartT[];
-  data: ProductT[];
-  addToCart: (item: CartT) => void;
-  removeFromCart: (id: number) => void;
-  decreaseQuantity: (id: number) => void;
-  increaseQuantity: (id: number) => void;
-  clearCart: () => void;
-  isEmpty: boolean;
-  cartTotal: number;
-};
+
 
 export const CartContext = createContext<CartContextType | undefined>(undefined);
 

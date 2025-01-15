@@ -4,10 +4,10 @@ export type CartT = ProductT & {
   quantity:number
 }
 
-export type CartContextType<T> = {
+export type CartContextType = {
   cart: CartT[];
   data: ProductT[];
-  addToCart: (data: T) => void;
+  addToCart: (data: CartT) => void;
   removeFromCart: (id: number) => void;
   decreaseQuantity: (id: number) => void;
   increaseQuantity: (id: number) => void;

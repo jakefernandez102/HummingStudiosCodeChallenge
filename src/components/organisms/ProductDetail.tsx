@@ -61,9 +61,10 @@ const ProductDetail = ({imageToShow, product, setImageToShow, imageGalery}:Produ
           <p className="fs-5 ">{product?.description}</p>
           <p className="fw-black text-primary fs-3 text-center">{product?.price.toLocaleString('en-US',{style:'currency',currency:'USD'})}</p>
           <Button
-            data={product}
-            onClick={addToCart}
+            data={{...product,quantity:1}}
+            onClick={() => addToCart({...product,quantity:1})}
             text={'Add to Cart'}
+            className={'btn btn-dark w-100'}
           />
       </div>
       <ToastContainer/>

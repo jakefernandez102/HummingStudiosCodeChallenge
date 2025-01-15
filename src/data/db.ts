@@ -1,7 +1,5 @@
 import {ProductT} from "../types/product";
 
-
-
 export const db:ProductT[] = [
     {
         id: 1,

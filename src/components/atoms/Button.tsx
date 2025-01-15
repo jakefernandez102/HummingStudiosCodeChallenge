@@ -1,10 +1,12 @@
-type ButtonProps<T> = {
+import {CartT} from "../../types/cart"
+
+type ButtonProps = {
   text:string,
-  data?:T,
-  onClick?:(data?: T)=>void,
+  data?:CartT,
+  onClick?:(data?: CartT | undefined)=>void,
   className?:string
 }
-const Button = <T,>({text,onClick,data,className}:ButtonProps<T>) => {
+const Button = ({text,onClick,data,className}:ButtonProps) => {
   return (
     <button 
         type="button"

@@ -63,7 +63,7 @@ export default function Product({product}: ProductProps) {
               <p className="fw-black text-primary fs-3 text-center">{price.toLocaleString('en-US',{style:'currency',currency:'USD'})}</p>
               <Button
                 data={{...product,quantity:1}}
-                onClick={addToCart}
+                onClick={()=>addToCart({...product,quantity:1})}
                 text={'Add to Cart'}
                 className={'btn btn-dark w-100'}
               />
