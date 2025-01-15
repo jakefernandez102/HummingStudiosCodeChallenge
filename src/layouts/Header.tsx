@@ -1,6 +1,7 @@
-import {useCart} from '../hooks/useCart';
-import Cart from '../components/header/Cart';
-import Title from '../components/header/Title';
+import Title from "../components/atoms/Title";
+import Cart from "../components/organisms/Cart";
+import {useCart} from "../hooks/useCart";
+
 
 export default function Header() {
   

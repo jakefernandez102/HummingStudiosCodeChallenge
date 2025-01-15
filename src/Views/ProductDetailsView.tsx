@@ -1,9 +1,9 @@
 import {useEffect, useState} from 'react'
-import ProductDetail from '../components/ProductDetail'
 import {useCart} from '../hooks/useCart'
 import {useParams} from 'react-router-dom'
 import Footer from '../components/Footer'
 import {ProductT} from '../types/product'
+import ProductDetail from '../components/organisms/ProductDetail'
 
 const ProductDetailsView = () => {
   const [product, setProduct] = useState<ProductT>()

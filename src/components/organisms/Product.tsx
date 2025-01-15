@@ -1,11 +1,11 @@
 import {useState} from "react";
 import {Link} from "react-router-dom";
-import { ProductT} from "../types/product";
-import {useCart} from "../hooks/useCart";
-import Button from "./product/Button";
-import VariantColors from "./product/VariantColors";
-import StockIndicator from "./product/StockIndicator";
-import ProductImage from "./product/ProductImage";
+import { ProductT} from "../../types/product";
+import {useCart} from "../../hooks/useCart";
+import Button from "../atoms/Button";
+import VariantColors from "../molecules/VariantColors";
+import StockIndicator from "../atoms/StockIndicator";
+import ProductImage from "../atoms/ProductImage";
 
 export type ProductProps ={
   product:ProductT
@@ -62,9 +62,10 @@ export default function Product({product}: ProductProps) {
               <h3 className="text-black fs-4 fw-bold text-uppercase text-center">{name}</h3>
               <p className="fw-black text-primary fs-3 text-center">{price.toLocaleString('en-US',{style:'currency',currency:'USD'})}</p>
               <Button
-                product={product}
-                addToCart={addToCart}
+                data={{...product,quantity:1}}
+                onClick={addToCart}
                 text={'Add to Cart'}
+                className={'btn btn-dark w-100'}
               />
             </div>
         </div>

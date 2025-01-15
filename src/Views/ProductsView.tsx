@@ -1,9 +1,10 @@
 
-import Product from '../components/Product'
+import Product from '../components/organisms/Product'
 import Footer from '../components/Footer'
 import {useCart} from '../hooks/useCart'
-import SubscriptionForm from '../components/SubscriptionForm'
+import SubscriptionForm from '../components/molecules/SubscriptionForm'
 import {ToastContainer} from 'react-toastify'
+import {ProductT} from '../types/product'
 
 
 function ProductView() {
@@ -15,7 +16,7 @@ function ProductView() {
         <h2 className="text-center">Our Product</h2>
 
         <div className="row mt-5">
-            {data.map((product) => (
+            {data.map((product:ProductT) => (
                 <Product
                   key={product.id}
                   product={product}

@@ -1,9 +1,10 @@
-import {useCart} from "../hooks/useCart"
 import ReactImageMagnify from 'react-image-magnify';
-import {ProductT} from "../types/product";
-import Button from "./product/Button";
-import VariantColors from "./product/VariantColors";
+
 import {ToastContainer} from "react-toastify";
+import {ProductT} from '../../types/product';
+import {useCart} from '../../hooks/useCart';
+import VariantColors from '../molecules/VariantColors';
+import Button from '../atoms/Button';
 
 type ProductDetailProps ={
   imageToShow:string,
@@ -60,8 +61,8 @@ const ProductDetail = ({imageToShow, product, setImageToShow, imageGalery}:Produ
           <p className="fs-5 ">{product?.description}</p>
           <p className="fw-black text-primary fs-3 text-center">{product?.price.toLocaleString('en-US',{style:'currency',currency:'USD'})}</p>
           <Button
-            product={product}
-            addToCart={addToCart}
+            data={product}
+            onClick={addToCart}
             text={'Add to Cart'}
           />
       </div>
